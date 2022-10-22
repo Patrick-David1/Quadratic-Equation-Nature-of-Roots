@@ -1,1 +1,1 @@
-# Automated Solving | Quadratic Equation / Nature of Roots
+# Automated Solving
