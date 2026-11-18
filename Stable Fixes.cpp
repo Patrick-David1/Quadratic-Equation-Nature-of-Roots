@@ -1,82 +1,45 @@
 #include <iostream>
 #include <cmath>
-#include <unistd.h>
-#include <math.h>
 
- using namespace std;
+using namespace std;
 
-int 
-main () 
-{
-  int ax, bx, c;
-    
-  int x;
-cout << "Enter standard form values." << "\n";
+int main() {
+    int a, b, c;
 
-cout << "Enter the value of (a)\n";
-cin >> ax;
-cout << "Enter the value of (b)\n";
-cin >> bx;
-cout << "Enter the value of (c)\n";
-cin >> c;
-  
-cout << "Squaring the value (b)..." << "\n";
-  
-int newbx;
-newbx = bx * bx;
-cout << "(b) is now " << newbx << "." << "\n";
+    cout << "Enter standard form values.\n";
+    cout << "Enter the value of (a): ";
+    cin >> a;
+    cout << "Enter the value of (b): ";
+    cin >> b;
+    cout << "Enter the value of (c): ";
+    cin >> c;
 
-cout << "Our equation is now " << newbx << " - 4 (" << ax << "," << c << ")" << "\n";
+    // Step 1: Calculate b^2
+    int b_sq = b * b;
+    cout << "\nSquaring (b): " << b << " x " << b << " = " << b_sq << "\n";
+    cout << "Our equation is now: " << b_sq << " - 4(" << a << ")(" << c << ")\n";
 
-cout << "The code squared the given value of (b)\n" << "So b(" << bx << ") is (" << bx << " x " << bx << " = " << newbx << ")\n";
+    // Step 2: Calculate 4ac
+    int four_ac = 4 * a * c;
+    cout << "Solving 4ac: 4 x " << a << " x " << c << " = " << four_ac << "\n";
 
-cout << "Proceeding to solve the right side of the equation...\n";
-  
-int optr;
-optr = 4;
-int bsqoptr;
-bsqoptr = optr * ax;
-cout << optr << " x a(" << ax << ") is " << bsqoptr << ".\n";
-int bsqoptr2;
-bsqoptr2 = bsqoptr * c;
-cout << "c(" << c << ") x " << bsqoptr << " is " << bsqoptr2 << ".\n";
-  
+    // Step 3: Calculate discriminant
+    int discriminant = b_sq - four_ac;
+    cout << "Discriminant: " << b_sq << " - " << four_ac << " = " << discriminant << "\n\n";
 
-int ans;
-ans = newbx - bsqoptr2;
-  
+    // Step 4: Determine nature of roots
+    if (discriminant < 0) {
+        cout << "Therefore, " << discriminant << " < 0: Has No Real Roots (Imaginary).\n";
+    } else if (discriminant == 0) {
+        cout << "Therefore, " << discriminant << " = 0: Real, Equal, and Rational.\n";
+    } else {
+        int root = static_cast<int>(sqrt(discriminant));
+        if (root * root == discriminant) {
+            cout << "Therefore, " << discriminant << " > 0: Real, Unequal, and Rational.\n";
+        } else {
+            cout << "Therefore, " << discriminant << " > 0: Real, Unequal, and Irrational.\n";
+        }
+    }
 
-cout << "The code subtracted both sides of the equation.\n" << "So the discriminant is " << newbx << " - " << bsqoptr2 << " = " << ans << ".\n";
-cout << "The discriminant is " << ans << ".\n";
- 
-int sqrtval;
-sqrtval = sqrt (ans);
-  
-if (ans == 0) {
-cout << "So therefore, " << ans << " = 0 Is Both Equal & Rational.\n";
-} else if (sqrtval * sqrtval == ans) {
-cout << "So therefore, " << ans << " < 0 Has Real Roots & Rational.\n";
+    return 0;
 }
-else if (ans <= 0) {
-cout << ans << " Has No Real Roots, And Is An Imaginary Number.\n";
-} else if (sqrtval * sqrtval != ans) {
-cout << "So therefore, " << ans << " < 0 Has Real Roots, But Irrational.\n";
-}
-
-}
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
