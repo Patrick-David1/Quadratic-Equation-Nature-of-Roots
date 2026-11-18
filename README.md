@@ -1,2 +1,2 @@
 # Automated Solving
-Algebra 1
+A program that asks you to enter the `a`, `b`, and `c` values of a quadratic equation and walks you through finding the discriminant (b^2 - 4ac) step-by-step, printing out each part of the math as it goes. Once it gets the final number, it uses a few simple checks to tell you what kind of roots the equation has—whether they are imaginary (when the result is negative), real and equal (when it's zero), or two distinct real numbers, even checking if the result is a perfect square to see if those roots are rational or irrational.
